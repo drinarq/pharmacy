@@ -1,0 +1,9 @@
+<div class="item-wrapper">
+  <div
+    (click)="link(item.id)"
+    *ngFor="let item of products$ | async as products"
+    class="item"
+  >
+    <app-item [productData]="item"> </app-item>
+  </div>
+</div>

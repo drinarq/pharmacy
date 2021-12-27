@@ -1,0 +1,51 @@
+.about-wrapper {
+  margin-top: 100px;
+  height: 90%;
+  width: 50%;
+  margin-left: 25%;
+  background-color: lightgreen;
+  border-radius: 10px;
+}
+
+.spinner {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.image-wrapper {
+  height: 300px;
+  width: 400px;
+  padding: 40px;
+
+  .image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  padding: 40px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.description {
+  padding: 30px;
+  font-size: 25px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 20px;
+  padding: 5px;
+}

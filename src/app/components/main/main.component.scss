@@ -1,0 +1,22 @@
+.item {
+  margin: 50px 0;
+  width: 100%;
+  border: 1px solid lightgreen;
+  cursor: pointer;
+  border-radius: 100px;
+}
+
+.item-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+  border: 2px solid lightgreen;
+  width: 50%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+}

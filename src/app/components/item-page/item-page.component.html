@@ -1,0 +1,26 @@
+<div
+  *ngIf="productsData$ | async as productData; else spinner"
+  class="about-wrapper"
+>
+  <div class="row">
+    <div class="image-wrapper">
+      <img class="image" [src]="productData.image" />
+    </div>
+    <div class="column">
+      <h1 class="header">{{ productData.title }}</h1>
+      <div class="text">Price: {{ productData.price || "unknown" }}</div>
+      <div class="text">Volume: {{ productData.volume || "unknown" }}</div>
+      <div class="text">Country: {{ productData.Country || "unknown" }}</div>
+      <div class="text">
+        Form Of Issue : {{ productData.FormOfIssue || "unknown" }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="description">
+      {{ productData.description }}
+    </div>
+  </div>
+</div>
+
+<ng-template #spinner> <mat-spinner class="spinner"></mat-spinner></ng-template>

@@ -1,18 +1,45 @@
-// src/app/core/services/tour-events.service.ts
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import { environment } from 'src/environments/environment';
-import { Item } from '../models/items.model';
+import {
+  fullProductMapperIn,
+  productMapperIn,
+} from '../mappers/product.mapper';
+import {
+  Product,
+  ProductEntities,
+  ProductEntity,
+  ProductListItem,
+} from '../models/products.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class TourEventsService {
-  private eventsPath = 'item';
+export class ProductsApiService {
+  private baseProductsUrl = `${environment.apiUrl}products`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  getPharmacyItems(){
-    return this.http.get<Item[]>(environment.apiUrl+this.eventsPath);
+  public getPharmacyItems(): Observable<Product[]> {
+    return this.httpClient.get<ProductEntities>(this.baseProductsUrl).pipe(
+      map((products) => {
+        return products.data.map((product) => {
+          return productMapperIn(product);
+        });
+      })
+    );
+  }
+
+  public getPharmacyItemById(id: string): Observable<ProductListItem> {
+    return this.httpClient
+      .get<ProductEntity>(`${this.baseProductsUrl}/${id}`)
+      .pipe(
+        map((product) => {
+          return fullProductMapperIn(product);
+        })
+      );
   }
 }
