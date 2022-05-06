@@ -5,9 +5,9 @@ export interface ProductListItem {
   title: string;
   price: number;
   description: string;
-  Country: Country;
+  country: Country;
   volume: string;
-  FormOfIssue: string;
+  formOfIssue: string;
   image: string;
 }
 

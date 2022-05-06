@@ -3,8 +3,8 @@
   height: 90%;
   width: 50%;
   margin-left: 25%;
-  background-color: lightgreen;
-  border-radius: 10px;
+  background-color: white;//окно с описанием продукта 
+  border-radius: 30px; //углы
 }
 
 .spinner {
@@ -31,14 +31,14 @@
 }
 
 .header {
-  padding: 40px;
+  padding: 20px;
   font-weight: bold;
   font-size: 40px;
 }
 
 .description {
-  padding: 30px;
-  font-size: 25px;
+  padding: 20px;
+  font-size: 23px;
   line-height: 1.5;
   display: flex;
   justify-content: center;
@@ -46,6 +46,6 @@
 }
 
 .text {
-  font-size: 20px;
+  font-size: 20px;// о лекарствах размер 
   padding: 5px;
 }

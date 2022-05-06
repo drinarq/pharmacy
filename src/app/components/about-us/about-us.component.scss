@@ -1,28 +1,28 @@
 .about-wrapper {
-  margin-top: 100px;
-  height: 90%;
+  margin-top: 100px; //отступ сверху рамки 
+  height: 140%;
   width: 50%;
   margin-left: 25%;
-  background-color: lightgreen;
-  border-radius: 10px;
+  background-color: white; // о компании 
+  border-radius: 100px; // углы
 }
 
 .header {
-  font-size: 30px;
+  font-size: 30px;// размер компании
   font-weight: bold;
   display: flex;
   justify-content: center;
-  padding: 15px;
+  padding: 10px; 
 }
 .description {
   font-size: 16px;
-  margin-top: 50px;
+  margin-top: 10px;
   padding: 0 50px 50px 50px;
-  line-height: 2;
+  line-height: 2; //высота строки
 }
 
 .contacts-wrapper {
-  display: flex;
+  display: flex; //текст под фото
   justify-content: space-around;
   flex-direction: row;
   margin-top: 20px;

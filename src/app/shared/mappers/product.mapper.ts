@@ -19,8 +19,8 @@ export const fullProductMapperIn = (
   title: product.data.attributes.title,
   description: product.data.attributes.description,
   price: product.data.attributes.price,
-  Country: product.data.attributes.Country,
+  country: product.data.attributes.country,
   volume: product.data.attributes.volume,
-  FormOfIssue: product.data.attributes.FormOfIssue,
+  formOfIssue: product.data.attributes.formOfIssue,
   image: product.data.attributes.image,
 });
