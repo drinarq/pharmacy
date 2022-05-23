@@ -1,9 +1,13 @@
 .item {
   margin: 40px 0; //размер таблички
   width: 100%;
-  border: 5px solid rgb(252, 254, 255);
+  border: 5px solid rgb(252, 255, 255);
   cursor: pointer;
   border-radius: 100px;
+}
+
+.item:first-of-type {
+  margin: 0 0 40px 0;
 }
 
 .item-wrapper {
@@ -19,4 +23,39 @@
   margin-right: -50%;
   transform: translate(-50%, -50%);
   border-radius: 50px; //округление краев
+}
+
+.search {
+  border-radius: 10px;
+  padding-top: 20px;
+}
+
+::ng-deep {
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 10px !important;
+    padding: 0.75em 0.75em 0 0.75em;
+    width: 400px;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #fff;
+  }
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 20px;
+    padding: 0.75em 0.75em 0 0.75em;
+    border: 1px solid white;
+  }
+
+  .mat-form-field-underline {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+    transform: scale3d(1, 1.0001, 1);
+  }
+}
+
+.action {
+  &__clear {
+    cursor: pointer;
+  }
 }

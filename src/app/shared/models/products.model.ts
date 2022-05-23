@@ -9,6 +9,7 @@ export interface ProductListItem {
   volume: string;
   formOfIssue: string;
   image: string;
+  inStock: number;
 }
 
 export interface Product {
@@ -17,6 +18,7 @@ export interface Product {
   price: number;
   description: string;
   image: string;
+  count?: number;
 }
 
 export interface ProductEntities {
@@ -25,7 +27,6 @@ export interface ProductEntities {
     id: string;
   }[];
 }
-
 
 export interface ProductEntity {
   data: {

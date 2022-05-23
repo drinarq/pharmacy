@@ -23,4 +23,5 @@ export const fullProductMapperIn = (
   volume: product.data.attributes.volume,
   formOfIssue: product.data.attributes.formOfIssue,
   image: product.data.attributes.image,
+  inStock: product.data.attributes.inStock,
 });

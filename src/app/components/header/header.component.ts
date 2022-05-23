@@ -15,7 +15,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('products');
   }
 
-  
+  public cartLink() {
+    this.router.navigateByUrl('cart');
+  }
+
   public aboutUsLink() {
     this.router.navigateByUrl('about');
   }

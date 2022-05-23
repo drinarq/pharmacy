@@ -3,7 +3,7 @@
   height: 90%;
   width: 50%;
   margin-left: 25%;
-  background-color: white;//окно с описанием продукта 
+  background-color: white; //окно с описанием продукта
   border-radius: 30px; //углы
 }
 
@@ -43,9 +43,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  word-break: break-word;
 }
 
 .text {
-  font-size: 20px;// о лекарствах размер 
-  padding: 5px;
+  font-size: 20px; // о лекарствах размер
+  padding: 10px;
+
+  &__subtitle {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.action {
+  &__add-to-cart {
+    align-self: flex-start;
+    margin-top: 30px;
+  }
+
+  &__count-slider {
+    width: 250px;
+  }
+}
+
+:host ::ng-deep {
+  .mat-accent .mat-slider-track-fill,
+  .mat-accent .mat-slider-thumb,
+  .mat-accent .mat-slider-thumb-label {
+    background-color: #3f51b5;
+  }
 }

@@ -9,18 +9,26 @@
 
   flex-direction: row;
 }
-.image-container { //кнопки
+.image-container {
+  //кнопки
   height: 50px;
   width: 15px;
 }
 
 .image {
   height: 100%;
-  margin-left: 25px; //дом едет 
+  margin-left: 25px; //дом едет
 }
 
 .button {
   margin-left: 100px;
   background-color: rgb(13, 190, 221);
   color: rgb(252, 237, 237);
+
+  &__cart {
+    justify-self: flex-end;
+    margin-left: auto;
+    margin-right: 50px;
+    background-color: rgb(13, 190, 221);
+  }
 }

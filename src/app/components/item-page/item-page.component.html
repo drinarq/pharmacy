@@ -4,15 +4,52 @@
 >
   <div class="row">
     <div class="image-wrapper">
-      <img class="image" [src]="productData.image" />
+      <img
+        *ngIf="productData.image; else defaultImg"
+        class="image"
+        [src]="productData.image"
+      />
     </div>
     <div class="column">
       <h1 class="header">{{ productData.title }}</h1>
-      <div class="text">Price: {{ productData.price || "unknown" }}</div>
-      <div class="text">Volume: {{ productData.volume || "unknown" }}</div>
-      <div class="text">Country: {{ productData.country || "unknown" }}</div>
       <div class="text">
-        Form Of Issue : {{ productData.formOfIssue || "unknown" }}
+        <span class="text__subtitle">Price:</span>
+        {{ productData.price || "unknown" }}
+      </div>
+      <div class="text">
+        <span class="text__subtitle">Volume:</span>
+        {{ productData.volume || "unknown" }}
+      </div>
+      <div class="text">
+        <span class="text__subtitle">Country:</span>
+        {{ productData.country || "unknown" }}
+      </div>
+      <div class="text">
+        <span class="text__subtitle">Form Of Issue :</span>
+        {{ productData.formOfIssue || "unknown" }}
+      </div>
+      <div class="text">
+        <span class="text__subtitle">In Stock :</span>
+        {{ productData.inStock || "unknown" }}
+      </div>
+      <div class="column">
+        <div>
+          <ng-container
+            *ngTemplateOutlet="
+              countSlider;
+              context: { max: productData.inStock }
+            "
+          ></ng-container>
+          <span>{{ selectCountControl.value }}</span>
+        </div>
+        <button
+          (click)="addToCart(productData)"
+          class="action__add-to-cart"
+          mat-raised-button
+          color="primary"
+        >
+          <mat-icon>add_shopping_cart</mat-icon> add to cart
+        </button>
       </div>
     </div>
   </div>
@@ -24,3 +61,20 @@
 </div>
 
 <ng-template #spinner> <mat-spinner class="spinner"></mat-spinner></ng-template>
+
+<ng-template #defaultImg>
+  <img class="image" src="'../../../../../assets/noImage.svg" alt="" />
+</ng-template>
+
+<ng-template #countSlider let-max="max">
+  <mat-slider
+    [formControl]="selectCountControl"
+    class="action__count-slider"
+    [max]="max"
+    [min]="0"
+    [step]="1"
+    [thumbLabel]="true"
+    [tickInterval]="1"
+  >
+  </mat-slider>
+</ng-template>

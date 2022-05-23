@@ -1,8 +1,13 @@
 <div class="item-wrapper">
+  <mat-form-field class="search" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input [formControl]="searchControl" matInput type="text" />
+    <mat-icon class="action__clear" (click)="clear()" matSuffix>close</mat-icon>
+  </mat-form-field>
   <div
-    (click)="link(item.id)"
-    *ngFor="let item of products$ | async as products"
     class="item"
+    (click)="link(item.id)"
+    *ngFor="let item of filteredData$ | async as products"
   >
     <app-item [productData]="item"> </app-item>
   </div>
